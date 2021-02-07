@@ -6,6 +6,7 @@ import { auth } from "./firebase";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import { login, logout, selectUser } from "./state/userSlice";
+import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
 
 const App = () => {
   const user = useSelector(selectUser);
@@ -36,6 +37,7 @@ const App = () => {
           <LoginScreen />
         ) : (
           <Switch>
+            <Route exact path="/profile" component={ProfileScreen} />
             <Route exact path="/" component={HomeScreen} />
           </Switch>
         )}
